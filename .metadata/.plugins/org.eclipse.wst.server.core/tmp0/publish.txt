@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Mon Feb 19 20:26:47 IST 2018
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\Purnesh\\.m2\\repository\\org\\springframework\\spring-web\\5.0.1.RELEASE\\spring-web-5.0.1.RELEASE.jar=WEB-INF/lib/spring-web-5.0.1.RELEASE.jar
+org.eclipse.jst.j2ee.server\:ecommerce-backend=WEB-INF/lib/ecommerce-backend-0.0.1-SNAPSHOT.jar

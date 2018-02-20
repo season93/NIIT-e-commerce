@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.niit.eccomerse_backend.models.CartItemModel"/>
+<fullyQualifiedTypeName name="com.niit.eccomerse_backend.models.BasketModel"/>
+<fullyQualifiedTypeName name="org.hibernate.Query"/>
+<fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
+<fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+<fullyQualifiedTypeName name="javax.persistence.FetchType"/>
+<fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
+<fullyQualifiedTypeName name="com.niit.eccomerse_backend.DAO.CartItemDao"/>
+<fullyQualifiedTypeName name="com.niit.eccomerse_backend.DAOimpl.CartItemDaoImpl"/>
+</qualifiedTypeNameHistroy>

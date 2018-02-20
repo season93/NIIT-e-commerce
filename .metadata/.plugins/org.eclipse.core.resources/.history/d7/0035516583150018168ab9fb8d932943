@@ -1,0 +1,56 @@
+package com.niit.eccomerse_backend.DAOimpl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
+
+import com.niit.eccomerse_backend.models.CartItemModel;
+import com.niit.eccomerse_backend.models.ProductModel;
+import com.niit.eccomerse_backend.models.UserModel;
+
+public class CartDaoImpl implements CartDao {
+
+	private SessionFactory sessionFactory;
+	public CartDaoImpl(SessionFactory sessionFactory) {
+           this.sessionFactory=sessionFactory;	
+	}
+    @Transactional
+	public void addToCart(String name, int pid) {
+		 Session session=sessionFactory.openSession();
+		 CartItemModel cart=new CartModel();
+		 cart.setProductid(pid);
+		 cart.setUsername(name);
+		 session.save(cart);
+		
+	}
+    @Transactional
+	public List<ProductModel> openBasket() {
+    	String name=new UserModel().getUsername();
+    			
+	Session session=sessionFactory.openSession();
+	Criteria crit=session.createCriteria(CartModel.class);
+	crit.add(Restrictions.eq("username", name));
+	List<CartModel> list=crit.list();	
+	List<Integer> integer=new ArrayList<Integer>();
+	 for(CartModel c:list)
+		 integer.add(c.getProductid());
+	 
+	 List<ProductModel> productlist=new ArrayList<ProductModel>();
+	    for(int i:integer)
+	    {
+	    	ProductModel pm=(ProductModel)session.load(ProductModel.class, i);
+	    	productlist.add(pm);
+	    	
+	    }
+	    	
+	
+	  return productlist;
+	}
+
+}
